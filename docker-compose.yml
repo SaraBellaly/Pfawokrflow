@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: funding
+      POSTGRES_PASSWORD: funding_dev
+      POSTGRES_DB: funding
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U funding"]
+      interval: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 5
+
+  api:
+    build: .
+    command: >
+      uvicorn packages.api.main:app
+      --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_URL: postgresql+asyncpg://funding:funding_dev@postgres:5432/funding
+      DATABASE_URL_SYNC: postgresql+psycopg2://funding:funding_dev@postgres:5432/funding
+      REDIS_URL: redis://redis:6379/0
+      LLM_PROVIDER: cloud
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build: .
+    command: >
+      celery -A packages.worker.celery_app worker
+      --loglevel=info --concurrency=2
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_URL: postgresql+asyncpg://funding:funding_dev@postgres:5432/funding
+      DATABASE_URL_SYNC: postgresql+psycopg2://funding:funding_dev@postgres:5432/funding
+      REDIS_URL: redis://redis:6379/0
+      LLM_PROVIDER: cloud
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  pgdata:
