@@ -1,0 +1,214 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-005",
+  "scenario": "complete_simple",
+  "description": "Dossier complet avec justificatif de domicile optionnel fourni.",
+  "client": {
+    "client_id": "CLI-FICT-005",
+    "legal_name": "Imprimerie Epsilon (FICTIF) SAS",
+    "registration_number": "FICT-RCS-0005",
+    "legal_representative": "Hugo FICTIF-EPSILON",
+    "country": "FR"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-005",
+    "client_id": "CLI-FICT-005",
+    "status": "submitted",
+    "created_at": "2026-10-05T09:00:00Z",
+    "updated_at": "2026-10-05T09:00:00Z",
+    "requested_amount": "27500.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-005-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-005_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-05T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-005-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-005_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-05T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-005-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-005_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-05T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-005-4",
+        "piece_type": "proof_of_address",
+        "file_name": "DOS-FICT-005_proof_of_address.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-05T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-005-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Hugo FICTIF-EPSILON\nN° document : FICT-ID-000005\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : FR",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Hugo FICTIF-EPSILON",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000005",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "FR",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-005-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Imprimerie Epsilon (FICTIF) SAS\nExercice : 2025\nChiffre d'affaires : 300000.00 EUR\nRésultat net : 24000.00 EUR\nCapitaux propres : 105000.00 EUR\nDettes totales : 75000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Imprimerie Epsilon (FICTIF) SAS",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "300000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "24000.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "105000.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "75000.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-005-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00005 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Imprimerie Epsilon (FICTIF) SAS\nDate : 2026-09-15\nTotal HT : 22916.67 EUR\nTotal TTC : 27500.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Imprimerie Epsilon (FICTIF) SAS",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00005",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "22916.67",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "27500.00",
+            "confidence": 0.93
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-005-4",
+        "piece_type": "proof_of_address",
+        "ocr_status": "done",
+        "ocr_text": "JUSTIFICATIF DE DOMICILE — DOCUMENT FICTIF\nTitulaire : Imprimerie Epsilon (FICTIF) SAS\nAdresse : 12 rue Imaginaire, 00000 Villefictive\nÉmis le : 2026-08-01",
+        "extracted_fields": [
+          {
+            "name": "holder_name",
+            "value": "Imprimerie Epsilon (FICTIF) SAS",
+            "confidence": 0.92
+          },
+          {
+            "name": "address",
+            "value": "12 rue Imaginaire, 00000 Villefictive",
+            "confidence": 0.99
+          },
+          {
+            "name": "issue_date",
+            "value": "2026-08-01",
+            "confidence": 0.97
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "simple",
+    "status": "approved",
+    "decision_type": "auto_approve",
+    "triggered_rules": [
+      "R9"
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-007",
+  "scenario": "missing_piece",
+  "description": "Pièce obligatoire manquante (quote), 0 relance(s) envoyée(s) : attente, pas de routage.",
+  "client": {
+    "client_id": "CLI-FICT-007",
+    "legal_name": "Garage Êta (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0007",
+    "legal_representative": "Malik FICTIF-ETA",
+    "country": "FR"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-007",
+    "client_id": "CLI-FICT-007",
+    "status": "submitted",
+    "created_at": "2026-10-07T10:00:00Z",
+    "updated_at": "2026-10-07T10:00:00Z",
+    "requested_amount": "22000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-007-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-007_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-07T10:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-007-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-007_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-07T10:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-007-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Malik FICTIF-ETA\nN° document : FICT-ID-000007\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : FR",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Malik FICTIF-ETA",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000007",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "FR",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-007-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Garage Êta (FICTIF) SARL\nExercice : 2025\nChiffre d'affaires : 200000.00 EUR\nRésultat net : 16000.00 EUR\nCapitaux propres : 70000.00 EUR\nDettes totales : 50000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Garage Êta (FICTIF) SARL",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "200000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "16000.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "70000.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "50000.00",
+            "confidence": 0.97
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [
+      "quote"
+    ],
+    "routing": null,
+    "status": "awaiting_documents",
+    "decision_type": null,
+    "triggered_rules": [
+      "R4"
+    ]
+  }
+}

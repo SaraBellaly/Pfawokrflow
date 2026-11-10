@@ -1,0 +1,180 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-022",
+  "scenario": "edge_amount_equal_threshold",
+  "description": "Montant exactement égal à 50 000,00 € : pas d'escalade (borne stricte), dossier simple.",
+  "client": {
+    "client_id": "CLI-FICT-022",
+    "legal_name": "Mécanique Chi (FICTIF) SAS",
+    "registration_number": "FICT-RCS-0022",
+    "legal_representative": "Théo FICTIF-CHI",
+    "country": "FR"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-022",
+    "client_id": "CLI-FICT-022",
+    "status": "submitted",
+    "created_at": "2026-10-22T09:00:00Z",
+    "updated_at": "2026-10-22T09:00:00Z",
+    "requested_amount": "50000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-022-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-022_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-22T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-022-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-022_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-22T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-022-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-022_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-22T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-022-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Théo FICTIF-CHI\nN° document : FICT-ID-000022\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : FR",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Théo FICTIF-CHI",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000022",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "FR",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-022-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Mécanique Chi (FICTIF) SAS\nExercice : 2025\nChiffre d'affaires : 400000.00 EUR\nRésultat net : 32000.00 EUR\nCapitaux propres : 140000.00 EUR\nDettes totales : 100000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Mécanique Chi (FICTIF) SAS",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "400000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "32000.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "140000.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "100000.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-022-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00022 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Mécanique Chi (FICTIF) SAS\nDate : 2026-09-15\nTotal HT : 41666.67 EUR\nTotal TTC : 50000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Mécanique Chi (FICTIF) SAS",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00022",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "41666.67",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "50000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "simple",
+    "status": "approved",
+    "decision_type": "auto_approve",
+    "triggered_rules": [
+      "R9"
+    ]
+  }
+}

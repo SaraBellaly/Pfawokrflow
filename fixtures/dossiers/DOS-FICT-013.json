@@ -1,0 +1,149 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-013",
+  "scenario": "unreadable_field",
+  "description": "OCR en échec sur le devis (fichier simulé corrompu) : escalade.",
+  "client": {
+    "client_id": "CLI-FICT-013",
+    "legal_name": "Traiteur Nu (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0013",
+    "legal_representative": "Lucas FICTIF-NU",
+    "country": "FR"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-013",
+    "client_id": "CLI-FICT-013",
+    "status": "submitted",
+    "created_at": "2026-10-13T08:00:00Z",
+    "updated_at": "2026-10-13T08:00:00Z",
+    "requested_amount": "14000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-013-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-013_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-13T08:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-013-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-013_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-13T08:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-013-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-013_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-13T08:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-013-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Lucas FICTIF-NU\nN° document : FICT-ID-000013\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : FR",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Lucas FICTIF-NU",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000013",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "FR",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-013-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Traiteur Nu (FICTIF) SARL\nExercice : 2025\nChiffre d'affaires : 180000.00 EUR\nRésultat net : 14400.00 EUR\nCapitaux propres : 63000.00 EUR\nDettes totales : 45000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Traiteur Nu (FICTIF) SARL",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "180000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "14400.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "63000.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "45000.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-013-3",
+        "piece_type": "quote",
+        "ocr_status": "failed",
+        "ocr_text": null,
+        "extracted_fields": []
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "sensitive",
+    "status": "pending_human_review",
+    "decision_type": "escalate",
+    "triggered_rules": [
+      "R6"
+    ]
+  }
+}

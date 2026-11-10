@@ -1,0 +1,180 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-014",
+  "scenario": "high_amount",
+  "description": "Montant 50 000,01 € (juste au-dessus du seuil) : escalade.",
+  "client": {
+    "client_id": "CLI-FICT-014",
+    "legal_name": "Logistique Xi (FICTIF) SAS",
+    "registration_number": "FICT-RCS-0014",
+    "legal_representative": "Chloé FICTIF-XI",
+    "country": "FR"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-014",
+    "client_id": "CLI-FICT-014",
+    "status": "submitted",
+    "created_at": "2026-10-14T09:15:00Z",
+    "updated_at": "2026-10-14T09:15:00Z",
+    "requested_amount": "50000.01",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-014-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-014_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-14T09:15:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-014-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-014_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-14T09:15:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-014-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-014_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-14T09:15:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-014-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Chloé FICTIF-XI\nN° document : FICT-ID-000014\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : FR",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Chloé FICTIF-XI",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000014",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "FR",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-014-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Logistique Xi (FICTIF) SAS\nExercice : 2025\nChiffre d'affaires : 600000.00 EUR\nRésultat net : 48000.00 EUR\nCapitaux propres : 210000.00 EUR\nDettes totales : 150000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Logistique Xi (FICTIF) SAS",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "600000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "48000.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "210000.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "150000.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-014-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00014 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Logistique Xi (FICTIF) SAS\nDate : 2026-09-15\nTotal HT : 43333.33 EUR\nTotal TTC : 52000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Logistique Xi (FICTIF) SAS",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00014",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "43333.33",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "52000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "sensitive",
+    "status": "pending_human_review",
+    "decision_type": "escalate",
+    "triggered_rules": [
+      "R3"
+    ]
+  }
+}

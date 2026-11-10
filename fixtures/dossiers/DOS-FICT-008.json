@@ -1,0 +1,133 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-008",
+  "scenario": "missing_piece",
+  "description": "Pièce obligatoire manquante (balance_sheet), 1 relance(s) envoyée(s) : attente, pas de routage.",
+  "client": {
+    "client_id": "CLI-FICT-008",
+    "legal_name": "Pressing Thêta (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0008",
+    "legal_representative": "Nora FICTIF-THETA",
+    "country": "MA"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-008",
+    "client_id": "CLI-FICT-008",
+    "status": "submitted",
+    "created_at": "2026-10-08T10:00:00Z",
+    "updated_at": "2026-10-08T10:00:00Z",
+    "requested_amount": "15000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-008-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-008_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-08T10:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-008-2",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-008_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-08T10:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 1,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-008-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Nora FICTIF-THETA\nN° document : FICT-ID-000008\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : MA",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Nora FICTIF-THETA",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000008",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "MA",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-008-2",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00008 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Pressing Thêta (FICTIF) SARL\nDate : 2026-09-15\nTotal HT : 12500.00 EUR\nTotal TTC : 15000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Pressing Thêta (FICTIF) SARL",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00008",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "12500.00",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "15000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [
+      "balance_sheet"
+    ],
+    "routing": null,
+    "status": "awaiting_documents",
+    "decision_type": null,
+    "triggered_rules": [
+      "R4"
+    ]
+  }
+}

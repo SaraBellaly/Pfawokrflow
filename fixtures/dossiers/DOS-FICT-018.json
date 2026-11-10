@@ -1,0 +1,180 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-018",
+  "scenario": "sensitive_list",
+  "description": "Teste un nom identique, caractère pour caractère, à une entrée de la liste sensible fictive (entrée sans client_id). Cette fixture n'est liée à aucune règle de comparaison des noms (Q16, non tranchée).",
+  "client": {
+    "client_id": "CLI-FICT-018",
+    "legal_name": "Négoce Sigma (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0018",
+    "legal_representative": "Nathan FICTIF-SIGMA",
+    "country": "BE"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-018",
+    "client_id": "CLI-FICT-018",
+    "status": "submitted",
+    "created_at": "2026-10-18T11:00:00Z",
+    "updated_at": "2026-10-18T11:00:00Z",
+    "requested_amount": "11000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-018-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-018_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-18T11:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-018-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-018_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-18T11:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-018-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-018_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-18T11:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-018-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Nathan FICTIF-SIGMA\nN° document : FICT-ID-000018\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : BE",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Nathan FICTIF-SIGMA",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000018",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "BE",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-018-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Négoce Sigma (FICTIF) SARL\nExercice : 2025\nChiffre d'affaires : 125000.00 EUR\nRésultat net : 10000.00 EUR\nCapitaux propres : 43750.00 EUR\nDettes totales : 31250.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Négoce Sigma (FICTIF) SARL",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "125000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "10000.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "43750.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "31250.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-018-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00018 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Négoce Sigma (FICTIF) SARL\nDate : 2026-09-15\nTotal HT : 9166.67 EUR\nTotal TTC : 11000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Négoce Sigma (FICTIF) SARL",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00018",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "9166.67",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "11000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "sensitive",
+    "status": "pending_human_review",
+    "decision_type": "escalate",
+    "triggered_rules": [
+      "R1"
+    ]
+  }
+}

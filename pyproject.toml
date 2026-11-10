@@ -1,0 +1,15 @@
+[project]
+name = "funding-workflow-automation"
+version = "0.1.0"
+description = "Automatisation du traitement des demandes de financement (MVP, semaine 1 : cadrage)"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.7,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Le paquet partagé est importé sous le nom `core` (packages/core).
+pythonpath = ["packages"]
+addopts = "-q"

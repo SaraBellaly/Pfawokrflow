@@ -1,0 +1,133 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-010",
+  "scenario": "missing_piece_after_reminders",
+  "description": "Devis toujours manquant après 2 relances : escalade.",
+  "client": {
+    "client_id": "CLI-FICT-010",
+    "legal_name": "Plomberie Kappa (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0010",
+    "legal_representative": "Sofia FICTIF-KAPPA",
+    "country": "BE"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-010",
+    "client_id": "CLI-FICT-010",
+    "status": "submitted",
+    "created_at": "2026-10-10T10:00:00Z",
+    "updated_at": "2026-10-10T10:00:00Z",
+    "requested_amount": "19000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-010-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-010_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-10T10:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-010-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-010_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-10T10:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 2,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-010-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Sofia FICTIF-KAPPA\nN° document : FICT-ID-000010\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : BE",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Sofia FICTIF-KAPPA",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000010",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "BE",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-010-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Plomberie Kappa (FICTIF) SARL\nExercice : 2025\nChiffre d'affaires : 190000.00 EUR\nRésultat net : 15200.00 EUR\nCapitaux propres : 66500.00 EUR\nDettes totales : 47500.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Plomberie Kappa (FICTIF) SARL",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "190000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "15200.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "66500.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "47500.00",
+            "confidence": 0.97
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [
+      "quote"
+    ],
+    "routing": "sensitive",
+    "status": "pending_human_review",
+    "decision_type": "escalate",
+    "triggered_rules": [
+      "R5"
+    ]
+  }
+}

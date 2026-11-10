@@ -1,0 +1,180 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-011",
+  "scenario": "unreadable_field",
+  "description": "Numéro de pièce d'identité illisible (confiance 0,42) : escalade.",
+  "client": {
+    "client_id": "CLI-FICT-011",
+    "legal_name": "Électricité Lambda (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0011",
+    "legal_representative": "Omar FICTIF-LAMBDA",
+    "country": "FR"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-011",
+    "client_id": "CLI-FICT-011",
+    "status": "submitted",
+    "created_at": "2026-10-11T08:00:00Z",
+    "updated_at": "2026-10-11T08:00:00Z",
+    "requested_amount": "21000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-011-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-011_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-11T08:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-011-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-011_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-11T08:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-011-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-011_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-11T08:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-011-1",
+        "piece_type": "identity_document",
+        "ocr_status": "unreadable",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Omar FICTIF-LAMBDA\nN° document : F?CT-ID-0▒0▒11\nNé(e) le : 1979-11-02\nExpire le : 2030-07-15\nNationalité : FR",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Omar FICTIF-LAMBDA",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "F?CT-ID-0▒0▒11",
+            "confidence": 0.42
+          },
+          {
+            "name": "birth_date",
+            "value": "1979-11-02",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2030-07-15",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "FR",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-011-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Électricité Lambda (FICTIF) SARL\nExercice : 2025\nChiffre d'affaires : 230000.00 EUR\nRésultat net : 18400.00 EUR\nCapitaux propres : 80500.00 EUR\nDettes totales : 57500.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Électricité Lambda (FICTIF) SARL",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "230000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "18400.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "80500.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "57500.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-011-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00011 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Électricité Lambda (FICTIF) SARL\nDate : 2026-09-15\nTotal HT : 17500.00 EUR\nTotal TTC : 21000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Électricité Lambda (FICTIF) SARL",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00011",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "17500.00",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "21000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "sensitive",
+    "status": "pending_human_review",
+    "decision_type": "escalate",
+    "triggered_rules": [
+      "R6"
+    ]
+  }
+}

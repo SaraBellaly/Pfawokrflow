@@ -1,0 +1,180 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-015",
+  "scenario": "high_amount",
+  "description": "Montant 120 000 € : escalade.",
+  "client": {
+    "client_id": "CLI-FICT-015",
+    "legal_name": "Agro Omicron (FICTIF) SA",
+    "registration_number": "FICT-RCS-0015",
+    "legal_representative": "Adam FICTIF-OMICRON",
+    "country": "MA"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-015",
+    "client_id": "CLI-FICT-015",
+    "status": "submitted",
+    "created_at": "2026-10-15T09:15:00Z",
+    "updated_at": "2026-10-15T09:15:00Z",
+    "requested_amount": "120000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-015-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-015_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-15T09:15:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-015-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-015_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-15T09:15:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-015-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-015_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-15T09:15:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-015-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Adam FICTIF-OMICRON\nN° document : FICT-ID-000015\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : MA",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Adam FICTIF-OMICRON",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000015",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "MA",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-015-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Agro Omicron (FICTIF) SA\nExercice : 2025\nChiffre d'affaires : 1500000.00 EUR\nRésultat net : 120000.00 EUR\nCapitaux propres : 525000.00 EUR\nDettes totales : 375000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Agro Omicron (FICTIF) SA",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "1500000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "120000.00",
+            "confidence": 0.92
+          },
+          {
+            "name": "total_equity",
+            "value": "525000.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "375000.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-015-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00015 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Agro Omicron (FICTIF) SA\nDate : 2026-09-15\nTotal HT : 100000.00 EUR\nTotal TTC : 120000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Agro Omicron (FICTIF) SA",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00015",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "100000.00",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "120000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "sensitive",
+    "status": "pending_human_review",
+    "decision_type": "escalate",
+    "triggered_rules": [
+      "R3"
+    ]
+  }
+}

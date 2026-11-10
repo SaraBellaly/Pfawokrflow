@@ -1,0 +1,180 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite.",
+  "fixture_id": "DOS-FICT-026",
+  "scenario": "edge_confidence_equal_threshold",
+  "description": "Résultat net lu avec une confiance de 0,80 exactement : lisible (borne stricte), dossier simple.",
+  "client": {
+    "client_id": "CLI-FICT-026",
+    "legal_name": "Cartonnerie Bet (FICTIF) SARL",
+    "registration_number": "FICT-RCS-0026",
+    "legal_representative": "Samy FICTIF-BET",
+    "country": "MA"
+  },
+  "dossier": {
+    "dossier_id": "DOS-FICT-026",
+    "client_id": "CLI-FICT-026",
+    "status": "submitted",
+    "created_at": "2026-10-26T09:00:00Z",
+    "updated_at": "2026-10-26T09:00:00Z",
+    "requested_amount": "23000.00",
+    "currency": "EUR",
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-026-1",
+        "piece_type": "identity_document",
+        "file_name": "DOS-FICT-026_identity_document.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-26T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-026-2",
+        "piece_type": "balance_sheet",
+        "file_name": "DOS-FICT-026_balance_sheet.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-26T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      },
+      {
+        "piece_id": "PCE-FICT-026-3",
+        "piece_type": "quote",
+        "file_name": "DOS-FICT-026_quote.pdf",
+        "mime_type": "application/pdf",
+        "received_at": "2026-10-26T09:00:00Z",
+        "ocr_status": "pending",
+        "ocr_text": null,
+        "extracted_fields": [],
+        "is_missing": false
+      }
+    ],
+    "reminder_count": 0,
+    "final_decision": null
+  },
+  "expected": {
+    "pieces": [
+      {
+        "piece_id": "PCE-FICT-026-1",
+        "piece_type": "identity_document",
+        "ocr_status": "done",
+        "ocr_text": "CARTE D'IDENTITÉ — DOCUMENT FICTIF (spécimen de test)\nNom complet : Samy FICTIF-BET\nN° document : FICT-ID-000026\nNé(e) le : 1984-04-12\nExpire le : 2031-03-01\nNationalité : MA",
+        "extracted_fields": [
+          {
+            "name": "full_name",
+            "value": "Samy FICTIF-BET",
+            "confidence": 0.99
+          },
+          {
+            "name": "document_number",
+            "value": "FICT-ID-000026",
+            "confidence": 0.97
+          },
+          {
+            "name": "birth_date",
+            "value": "1984-04-12",
+            "confidence": 0.93
+          },
+          {
+            "name": "expiry_date",
+            "value": "2031-03-01",
+            "confidence": 0.95
+          },
+          {
+            "name": "nationality",
+            "value": "MA",
+            "confidence": 0.91
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-026-2",
+        "piece_type": "balance_sheet",
+        "ocr_status": "done",
+        "ocr_text": "BILAN COMPTABLE — DOCUMENT FICTIF\nSociété : Cartonnerie Bet (FICTIF) SARL\nExercice : 2025\nChiffre d'affaires : 230000.00 EUR\nRésultat net : 18400.00 EUR\nCapitaux propres : 80500.00 EUR\nDettes totales : 57500.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "company_name",
+            "value": "Cartonnerie Bet (FICTIF) SARL",
+            "confidence": 0.98
+          },
+          {
+            "name": "fiscal_year",
+            "value": "2025",
+            "confidence": 0.94
+          },
+          {
+            "name": "revenue",
+            "value": "230000.00",
+            "confidence": 0.96
+          },
+          {
+            "name": "net_income",
+            "value": "18400.00",
+            "confidence": 0.8
+          },
+          {
+            "name": "total_equity",
+            "value": "80500.00",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_debt",
+            "value": "57500.00",
+            "confidence": 0.97
+          }
+        ]
+      },
+      {
+        "piece_id": "PCE-FICT-026-3",
+        "piece_type": "quote",
+        "ocr_status": "done",
+        "ocr_text": "DEVIS N° FICT-DEV-00026 — DOCUMENT FICTIF\nFournisseur : Fournisseur Oméga Équipements (FICTIF) SAS\nClient : Cartonnerie Bet (FICTIF) SARL\nDate : 2026-09-15\nTotal HT : 19166.67 EUR\nTotal TTC : 23000.00 EUR",
+        "extracted_fields": [
+          {
+            "name": "supplier_name",
+            "value": "Fournisseur Oméga Équipements (FICTIF) SAS",
+            "confidence": 0.94
+          },
+          {
+            "name": "client_name",
+            "value": "Cartonnerie Bet (FICTIF) SARL",
+            "confidence": 0.96
+          },
+          {
+            "name": "quote_number",
+            "value": "FICT-DEV-00026",
+            "confidence": 0.92
+          },
+          {
+            "name": "quote_date",
+            "value": "2026-09-15",
+            "confidence": 0.99
+          },
+          {
+            "name": "total_amount_excl_tax",
+            "value": "19166.67",
+            "confidence": 0.97
+          },
+          {
+            "name": "total_amount_incl_tax",
+            "value": "23000.00",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ],
+    "missing_pieces": [],
+    "routing": "simple",
+    "status": "approved",
+    "decision_type": "auto_approve",
+    "triggered_rules": [
+      "R9"
+    ]
+  }
+}

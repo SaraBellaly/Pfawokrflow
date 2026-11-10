@@ -1,0 +1,24 @@
+{
+  "_fictitious": true,
+  "_notice": "Données entièrement fictives générées pour les tests. Noms, numéros et entreprises sont inventés (marqués FICTIF/FICT) ; toute ressemblance serait fortuite. Cette liste remplace, pour les tests, un contrôle KYC/AML réel.",
+  "entries": [
+    {
+      "entry_id": "SL-FICT-001",
+      "client_id": "CLI-FICT-017",
+      "legal_name": "Import Rhô (FICTIF) SARL",
+      "reason": "Signalement fictif : incident de paiement simulé"
+    },
+    {
+      "entry_id": "SL-FICT-002",
+      "client_id": null,
+      "legal_name": "Négoce Sigma (FICTIF) SARL",
+      "reason": "Signalement fictif : homonymie à vérifier"
+    },
+    {
+      "entry_id": "SL-FICT-003",
+      "client_id": "CLI-FICT-900",
+      "legal_name": "Société Leurre (FICTIF) SA",
+      "reason": "Entrée leurre : ne correspond à aucune fixture"
+    }
+  ]
+}
